@@ -27,11 +27,7 @@ ENV GCCARMEMB_TOOLCHAIN_PATH /root/gcc-arm-none-eabi-5_4-2016q2
 RUN \
   cd /root && \
   wget https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q2-update/+download/gcc-arm-none-eabi-5_4-2016q2-20160622-linux.tar.bz2 && \
-  tar -C . -xaf gcc-arm-none-eabi-5_4-2016q2-20160622-linux.tar.bz2 && \
-  export PATH=${ZEPHYR_BASE}/scripts:${PATH} && \
-  git clone https://gerrit.zephyrproject.org/r/zephyr zephyr-project && \
-  cd zephyr-project && \
-  sanitycheck --platform qemu_cortex_m3 --inline-logs --build-only --enable-slow
+  tar -C . -xaf gcc-arm-none-eabi-5_4-2016q2-20160622-linux.tar.bz2
 
 # Add files.
 ADD root/.bashrc /root/.bashrc
