@@ -22,7 +22,8 @@ RUN \
 ENV LANG C
 ENV ZEPHYR_BASE /root/zephyr-project
 ENV GCCARMEMB_TOOLCHAIN_PATH /root/gcc-arm-none-eabi-5_4-2016q2
-ENV CROSS_COMPILE=/root/gcc-arm-none-eabi-5_4-2016q2/bin/arm-none-eabi-
+ENV ZEPHYR_GCC_VARIANT gccarmemb
+ENV CROSS_COMPILE /root/gcc-arm-none-eabi-5_4-2016q2/bin/arm-none-eabi-
 
 # Build.
 RUN \
