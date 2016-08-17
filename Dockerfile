@@ -15,13 +15,14 @@ RUN \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
   apt-get install -y byobu curl git htop man unzip vim wget && \
-  apt-get install -y git make gcc g++ python3-ply ncurses-dev && \
+  apt-get install -y git make gcc g++ python3-ply ncurses-dev lib32z1 lib32ncurses5 && \
   rm -rf /var/lib/apt/lists/*
 
 # Setup Build Enviroment
 ENV LANG C
 ENV ZEPHYR_BASE /root/zephyr-project
 ENV GCCARMEMB_TOOLCHAIN_PATH /root/gcc-arm-none-eabi-5_4-2016q2
+ENV CROSS_COMPILE=/root/gcc-arm-none-eabi-5_4-2016q2/bin/arm-none-eabi-
 
 # Build.
 RUN \
