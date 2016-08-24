@@ -1,0 +1,5 @@
+#!/bin/bash
+cd zephyr-project
+source zephyr-env.sh
+time sanitycheck --platform nrf52_nitrogen --inline-logs --build-only --outdir /root/zephyr-output/ --no-clean --enable-slow
+

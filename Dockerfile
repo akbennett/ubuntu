@@ -15,7 +15,7 @@ RUN \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
   apt-get install -y byobu curl git htop man unzip vim wget && \
-  apt-get install -y git make gcc g++ python3-ply ncurses-dev lib32z1 lib32ncurses5 && \
+  apt-get install -y git make gcc g++ python python3-ply ncurses-dev lib32z1 lib32ncurses5 && \
   rm -rf /var/lib/apt/lists/*
 
 # Setup Build Enviroment
@@ -36,6 +36,9 @@ ADD root/.bashrc /root/.bashrc
 ADD root/.gitconfig /root/.gitconfig
 ADD root/.scripts /root/.scripts
 
+# prep.
+COPY build /root/build
+
 # Set environment variables.
 ENV HOME /root
 
@@ -43,4 +46,4 @@ ENV HOME /root
 WORKDIR /root
 
 # Define default command.
-CMD ["bash"]
+CMD bash -c /root/build
