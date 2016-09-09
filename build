@@ -1,5 +1,5 @@
 #!/bin/bash
-cd zephyr-source
+cd /root/zephyr-source
 source zephyr-env.sh
 time sanitycheck --platform $PLATFORM --inline-logs --build-only --outdir /root/zephyr-output/ --no-clean --enable-slow
 
